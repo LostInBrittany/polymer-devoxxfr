@@ -1,0 +1,25 @@
+{
+  "name": "google-maps-demo",
+  "version": "0.0.0",
+  "authors": [
+    "Horacio Gonzalez <horacio.gonzalez@gmail.com>"
+  ],
+  "description": "Demo of Google Maps component in Polymer",
+  "main": "index.html",
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.4.2",
+    "google-map": "GoogleWebComponents/google-map#master"
+  }
+}
