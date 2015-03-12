@@ -7,7 +7,10 @@
   "description": "Demo of Google Maps component in Polymer",
   "main": "index.html",
   "keywords": [
-    "polymer"
+    "web-components",
+    "polymer",
+    "core-elements",
+    "GoogleWebComponents/google-map"
   ],
   "license": "MIT",
   "private": true,
@@ -19,7 +22,9 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.4.2",
-    "google-map": "GoogleWebComponents/google-map#master"
+    "polymer": "Polymer/polymer#~0.5.2",
+    "google-map": "GoogleWebComponents/google-map#master",
+    "webcomponentsjs": "~0.5.2",
+    "core-elements": "Polymer/core-elements#~0.5.2"
   }
 }

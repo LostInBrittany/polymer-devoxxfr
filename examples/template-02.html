@@ -1,0 +1,84 @@
+<html>
+<head>
+   <title>Shadow DOM in standard components</title>
+</head>
+
+<body>
+<div id="aComment">A comment</div>
+
+<div id="button">
+  <button onclick="applyTemplate()">Click to apply template</button>
+</div>
+
+
+
+<template id="commentTemplate">
+  <style>
+    .comment img {
+      width: 80px;
+    }
+    .comment-text{
+      font-style:italic;
+    }
+  </style>
+  <div class="comment">
+    <img src="http://lostinbrittany.org/avatar.png">
+    <div class="comment-text">
+      <content>
+      </content>
+    </div>
+  </div>
+</template>
+
+<script>
+
+  function applyTemplate() {
+     var host = document.querySelector('#aComment');
+
+     var template = document.querySelector("#commentTemplate");
+     
+     host.appendChild(template.content.cloneNode(true)); 
+   
+  }
+</script>
+
+<div id="nameTag">Bob</div>
+
+<template id="nameTagTemplate">
+  <style>
+    .outer {
+      border: 2px solid pink;
+      border-radius: 1em;
+      background: url(sakura.jpg);
+      font-size: 20pt;
+      width: 12em;
+      height: 7em;
+      text-align: center;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+    .name {
+      font-size: 45pt;
+      font-weight: normal;
+      margin-top: 0.8em;
+      padding-top: 0.2em;
+    }
+  </style>
+  <div class="outer">
+    <div class="name">
+      <content></content>
+    </div>
+    と申します。
+  </div>
+</template>
+
+<script>
+  console.log(document.querySelector('#nameTag'));
+  var shadow = document.querySelector('#nameTag').createShadowRoot();
+  var template = document.querySelector('#nameTagTemplate');
+  shadow.appendChild(template.content);
+  template.remove();
+</script>
+
+</body>
+</html>

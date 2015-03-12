@@ -1,0 +1,47 @@
+<html>
+<head>
+   <title>Shadow DOM in standard components</title>
+</head>
+
+<body>
+<div id="aComment">A comment</div>
+
+<div id="button">
+  <button onclick="applyTemplate()">Click to apply template</button>
+</div>
+
+
+
+<template id="commentTemplate">
+  <style>
+    .comment img {
+      width: 80px;
+    }
+    .comment-text{
+      font-style:italic;
+    }
+  </style>
+  <div class="comment">
+    <img src="http://lostinbrittany.org/avatar.png">
+    <div class="comment-text">
+      <content>
+      </content>
+    </div>
+  </div>
+</template>
+
+<script>
+
+  function applyTemplate() {
+     var host = document.querySelector('#aComment');
+
+     var template = document.querySelector("#commentTemplate");
+     
+     host.appendChild(template.content.cloneNode(true)); 
+   
+  }
+</script>
+
+
+</body>
+</html>

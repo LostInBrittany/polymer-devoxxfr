@@ -1,0 +1,21 @@
+<html>
+<head>
+   <title>Shadow DOM in standard components</title>
+</head>
+
+<body>
+<div id="emptyHost"></div>
+
+<div id="button">
+  <button onclick="addShadowRoot()">Click to add a Shadow Root</button>
+</div>
+
+<script>
+  function addShadowRoot() {
+     var host = document.querySelector('#emptyHost');
+     var root = host.createShadowRoot();
+     root.innerHTML = "<h1>Not empty anymore!</h4>";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+   <title>Shadow DOM in standard components</title>
+</head>
+
+<body>
+<div id="emptyHost"></div>
+
+<div id="button">
+  <button onclick="addComment()">Click to add a comment</button>
+</div>
+
+
+
+<template id="commentTemplate">
+  <style>
+    .comment img {
+      width: 80px;
+    }
+  </style>
+  <div class="comment">
+    <img src="">
+    <div class="comment-text"></div>
+  </div>
+</template>
+
+<script>
+  function instanceTemplate(imageUrl, text) {  
+    var t = document.querySelector("#commentTemplate");
+    var comment = t.content.cloneNode(true);
+    // Populate content.
+    comment.querySelector('img').src = imageUrl;
+    comment.querySelector('.comment-text').textContent = text;
+    return comment;
+  }
+
+  function addComment() {
+   
+    document.body.appendChild(instanceTemplate("http://lostinbrittany.org/avatar.png", 
+                                  "This is a nice comment made by a nice guy"));
+  }
+</script>
+
+
+</body>
+</html>

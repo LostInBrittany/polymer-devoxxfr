@@ -1,0 +1,48 @@
+
+#main {
+  background-color: #eeeeee;
+}
+
+.navbar {
+  margin-left: -15px;
+  margin-right: -15px;
+ }
+ .navbar-inverse {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.active>a:hover, 
+.navbar-inverse .navbar-nav>.active>a:focus {
+  color:#ffffff;
+  background-color: #5555BB;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover, 
+.navbar-inverse .navbar-nav>.active>a:focus{
+  color:#aaaaaa;
+}
+
+.navbar-inverse .navbar-nav>li>a, 
+.navbar-inverse .navbar-nav>li>a:hover, 
+.navbar-inverse .navbar-nav>li>a:focus {
+  color:#ffffff;
+}
+
+
+.navbar-inverse .navbar-nav>li>a:hover, 
+.navbar-inverse .navbar-nav>li>a:focus {
+  color:#aaaaaa;
+}
+.navbar-inverse .navbar-brand {
+  color:#ffffff;
+  font-size: 1.5em;
+}
+.navbar-inverse .navbar-brand img {
+  margin-bottom: -15px;
+  margin-top: -15px;
+}
+
+#workbench .panel {
+  height:550px;
+}

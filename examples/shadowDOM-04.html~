@@ -1,0 +1,53 @@
+<html>
+<head>
+   <title>Shadow DOM in standard components</title>
+</head>
+
+<body>
+<div id="emptyHost"></div>
+
+
+<div id="button">
+  <button onclick="addShadowedElement()">Click to add a shadowed element</button>
+</div>
+
+<div id="anchor"></div>
+
+<template id="commentTemplate">
+  <style>
+    .comment img {
+      width: 80px;
+    }
+  </style>
+  <div class="comment">
+    <img src="http://lostinbrittany.org/avatar.png">
+    <div class="comment-text">
+      <content></content>
+    </div>
+  </div>
+</template>
+
+<script>
+  var host = document.querySelector('#anchor');
+  var shadowRoot = host.webkitCreateShadowRoot();
+
+
+  function addShadowedElement() {
+    var host = document.querySelector('#emptyHost').cloneNode();  
+    host.textContent = "A nice comment...";
+    host.id = "item-"+Math.round(Math.random()*1000);  
+
+    var shadowRoot = host.webkitCreateShadowRoot();
+
+
+    var template = document.querySelector("#commentTemplate").cloneNode(true);
+
+
+    shadowRoot.appendChild(template.content);
+
+  }
+</script>
+
+
+</body>
+</html>

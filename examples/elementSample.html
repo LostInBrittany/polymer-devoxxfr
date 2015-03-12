@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A nice banking application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="./assets/js/html5shiv.js"></script>
+      <script src="./assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- My styles -->
+    <link href="elementSample.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+    <div class="container" id="main">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="./elementSample-logo.png" alt="A nice banking application" />
+              A nice banking application
+            </a>
+          </div>
+          <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>              
+            </ul>
+            <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+          </div><!--/.navbar-collapse -->
+        </div>
+      </div>
+      
+    
+      <div class="row">
+        <div class="col-lg-3" id="menu">
+          <div class="panel panel-primary panel-default">
+            <div class="panel-heading">Action menu</div>
+            <div class="panel-body list-group">            
+              <div class="list-group-item">
+                <h4 class="list-group-item-heading">Alpha actions</h4>
+                  <p class="list-group-item-text"><a href="#AlphaAction1">Action #1</a></p>
+                  <p class="list-group-item-text"><a href="#AlphaAction2">Action #2</a></p>
+                  <p class="list-group-item-text"><a href="#AlphaAction3">Action #3</a></p>
+                  <p class="list-group-item-text"><a href="#AlphaAction4">Action #4</a></p>
+              </div>
+              <div class="list-group-item">  
+                <h4 class="list-group-item-heading">Beta actions</h4>  
+                  <p class="list-group-item-text"><a href="#BetaAction1">Action #1</a></p>
+                  <p class="list-group-item-text"><a href="#BetaAction2">Action #2</a></p>
+                  <p class="list-group-item-text"><a href="#BetaAction3">Action #3</a></p>
+                  <p class="list-group-item-text"><a href="#BetaAction4">Action #4</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-9" id="workbench">
+          <div class="panel panel-primary panel-default">
+            <div class="panel-heading">Action #1 workbench</div>
+            <div class="panel-body">
+              <div>
+                <h4>RIB du client sans formattage</h4>
+                <div id="unformatted_rib">
+                  <div class="code_banque">1234</div> 
+                  <div class="code_guichet">5678</div> 
+                  <div class="numero_compte">xxxxxxxxxxx</div> 
+                  <div class="cle_rib">69</div>               
+                </div>
+              </div>
+              <hr />
+              <div>
+                <h4>RIB du client avec formattage</h4>
+                <div id="a_rib">
+                  <div class="code_banque">1234</div> 
+                  <div class="code_guichet">5678</div> 
+                  <div class="numero_compte">xxxxxxxxxxx</div> 
+                  <div class="cle_rib">69</div>               
+                </div>
+              </div>
+              <hr />
+              <div>
+                <h4>Code HTML pour les deux</h4>
+                <pre>
+&lt;div id="code_html_rib">
+  &lt;div class="code_banque">1234&lt;/div> 
+  &lt;div class="code_guichet">5678&lt;/div> 
+  &lt;div class="numero_compte">xxxxxxxxxxx&lt;/div> 
+  &lt;div class="cle_rib">69&lt;/div>               
+&lt;/div>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	  
+	  
+    <template id="rib">
+      <style>
+        .rib {
+          display: inline-block;
+          border: solid 1px black;
+        }
+        .rib div {
+          margin:4px;
+          display: inline-block;
+          padding-left: 2px;
+          padding-right: 2px;
+          font-family:monospace;
+          border: solid 1px black;
+        }
+      </style>
+      <div class="rib">
+        <div class="code_banque">
+          <b>Code banque</b> <br/>
+          <content select=".code_banque"></content>
+        </div>
+        <div class="code_guichet">
+          <b>Code guichet</b> <br/>
+          <content select=".code_guichet"></content>
+        </div>
+        <div class="numero_compte">
+          <b>Numéro de compte</b> <br/>
+          <content select=".numero_compte"></content>
+        </div>
+        <div class="cle_rib">
+          <b>Clé RIB</b> <br/>
+          <content select=".cle_rib"></content>
+        </div>
+      </div>
+    </template>
+
+    <script>
+        var host = document.querySelector('#a_rib');  
+        var shadowRoot = host.createShadowRoot();
+
+        var template = document.querySelector("#rib");
+        shadowRoot.appendChild(template.content);
+    </script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./assets/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
