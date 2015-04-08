@@ -1,5 +1,5 @@
 <link rel="import"  href="/bower_components/polymer/polymer.html">
-<polymer-element name="x-breizhjug">
+<polymer-element name="x-devoxxfr">
   <template>
     <style>
       @host {
@@ -28,27 +28,13 @@
         #box p {
           font-size: 30pt;
         }
-        #box div {
-          display: flex;
-          justify-content: center;
-        }
-        #box button {
-          font-size: 30pt;
-          border-radius: 10px;
-          background-color: white;
-          color: #72bb30;
-        }
     </style>
-   <div id="box">
-       <h1>Bonsoir {{whoami}}</h1>
-       <p><content></content></p>
-       <div><button on-click="{{sayHello}}">Click me!</button></div>
-   </div>
- </template>
- <script>
-   Polymer('x-breizhjug', {
-       whoami: "le BreizhJUG",
-       sayHello: function() { alert("Hello "+this.whoami); }
-   });
- </script>
+    <div id="box">
+      <h1>Bonjour Devoxx France !</h1> 
+      <p><content></content></p>
+    </div>
+  </template>
+  <script>
+    Polymer('x-devoxxfr');
+  </script>
 </polymer-element>
