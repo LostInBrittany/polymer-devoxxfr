@@ -1,5 +1,5 @@
 <link rel="import"  href="/bower_components/polymer/polymer.html">
-<polymer-element name="x-devoxxfr">
+<polymer-element name="x-poitou-charentes-jug">
   <template>
     <style>
       @host {
@@ -10,7 +10,7 @@
           }
           /* Two orher rules
           * { display: block; }
-          x-devfest { display: block; }
+          x-poitou-charentes-jug { display: block; }
           */
         }
         #box {
@@ -28,27 +28,28 @@
         #box p {
           font-size: 30pt;
         }
-        #box div {
-          display: flex;
-          justify-content: center;
-        }
         #box button {
           font-size: 30pt;
           border-radius: 10px;
           background-color: white;
           color: #72bb30;
         }
+        #box input {
+          font-size: 30pt;
+          border-radius: 10px;
+          background-color: white;
+          color: #72bb30;
+        }
     </style>
-   <div id="box">
+    <div id="box">
        <h1>Bonsoir {{whoami}}</h1>
        <p><content></content></p>
-       <div><button on-click="{{sayHello}}">Click me!</button></div>
+       <input value="{{whoami}}" placeholder="Your name here..." />
    </div>
  </template>
  <script>
-   Polymer('x-devoxxfr', {
-       whoami: "Devoxx France",
-       sayHello: function() { alert("Hello "+this.whoami); }
+   Polymer('x-poitou-charentes-jug', {
+       whoami: "Poitou-Charentes JUG"
    });
  </script>
 </polymer-element>
